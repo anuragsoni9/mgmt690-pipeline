@@ -1,0 +1,3 @@
+# MGMT690 Image Processing Pipeline
+
+More docs coming soon...
