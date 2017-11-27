@@ -1,4 +1,3 @@
-from shutil import copyfile
 import os
 import argparse
 
@@ -27,7 +26,7 @@ else:
 
 # move the image to the appropriate directory
 if valid:
-    copyfile(args.inFile, os.path.join(args.outDirValid, filename))
+    os.symlink(args.inFile, os.path.join(args.outDirValid, filename))
 else:
-    copyfile(args.inFile, os.path.join(args.outDirInvalid, filename))
+    os.symlink(args.inFile, os.path.join(args.outDirInvalid, filename))
 
