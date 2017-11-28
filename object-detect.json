@@ -1,0 +1,32 @@
+{
+  "pipeline": {
+    "name": "object-detect"
+  },
+  "input": {
+    "cross": [
+      {
+        "atom": {
+          "glob": "/valid/*",
+          "repo": "validate"
+        }
+      },
+      {
+        "atom": {
+          "glob": "/",
+          "repo": "model"
+        }
+      }
+    ]
+  },
+  "transform": {
+    "image": "dwhitena/mgmt-object-detect",
+    "cmd": [ "/bin/bash" ],
+    "stdin": [  
+      "cd /tensorflow/models/object_detection/", 
+      "python infer.py /pfs/model/frozen_inference_graph.pb /pfs/validate/valid/ /pfs/out/ 0.50"
+    ]
+  },
+    "parallelism_spec": {
+    "constant": "1"
+  }
+}

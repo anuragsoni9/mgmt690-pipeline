@@ -21,3 +21,10 @@ $ cd ../threat-detect/example_rule
 $ pachctl put-file rules master -c -f rule.json
 $ cd ../../
 ```
+
+## Create the pipelines
+
+```sh
+$ pachctl create-pipeline -f validate.json
+$ pachctl create-pipeline -f object-detect.json
+```
