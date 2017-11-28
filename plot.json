@@ -1,0 +1,21 @@
+{
+  "pipeline": {
+    "name": "plot"
+  },
+  "transform": {
+    "image": "dwhitena/mgmt-plot:fix2",
+    "cmd": [ "/bin/bash" ],
+    "stdin": [
+      "python /code/plot.py /pfs/threat-detect /pfs/out"
+    ]
+  },
+  "parallelism_spec": {
+    "constant": "1"
+  },
+  "input": {
+    "atom": {
+      "repo": "threat-detect",
+      "glob": "/*"
+    }
+  }
+}

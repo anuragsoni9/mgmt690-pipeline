@@ -1,8 +1,10 @@
-import matplotlib.pyplot as plt; plt.rcdefaults()
 import numpy as np
-import matplotlib.pyplot as plt
 import os
 import argparse
+import matplotlib
+matplotlib.use('Agg')
+
+import matplotlib.pyplot as plt; plt.rcdefaults()
 
 # command line arguments
 parser = argparse.ArgumentParser(description='Validate image for object detection.')

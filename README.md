@@ -27,4 +27,10 @@ $ cd ../../
 ```sh
 $ pachctl create-pipeline -f validate.json
 $ pachctl create-pipeline -f object-detect.json
+$ pachctl create-pipeline -f threat-detect.json
+$ pachctl create-pipeline -f plot.json
 ```
+
+## Processing images
+
+Images can now be committed to the input directory `images`, and they will automatically be process to generate notifications and plots.
