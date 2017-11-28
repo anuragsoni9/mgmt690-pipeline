@@ -4,10 +4,13 @@
   },
   "transform": {
     "image": "dwhitena/mgmt-threat-detect",
-    "cmd": [ "/bin/ash" ],
+    "cmd": [ "/bin/bash" ],
     "stdin": [
-      "python /code/threatdetect.py $object /pfs/rules /pfs/out"
-    ]
+      "python /code/threatdetect.py $object /pfs/rules /pfs/out $SGKEY"
+    ],
+    "env": {
+      "SGKEY": ""
+    }
   },
   "parallelism_spec": {
     "constant": "1"
