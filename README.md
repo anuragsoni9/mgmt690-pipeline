@@ -14,7 +14,7 @@ Then put our model and rules in the respective repos:
 
 ```sh
 $ wget http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v1_coco_11_06_2017.tar.gz
-$ tar -xvf model.tar.gz
+$ tar -xvf ssd_mobilenet_v1_coco_11_06_2017.tar.gz
 $ cd ssd_mobilenet_v1_coco_11_06_2017
 $ pachctl put-file model master -c -f frozen_inference_graph.pb
 $ cd ../threat-detect/example_rule 
