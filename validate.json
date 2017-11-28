@@ -1,0 +1,21 @@
+{
+  "pipeline": {
+    "name": "validate"
+  },
+  "transform": {
+    "image": "dwhitena/mgmt-validate",
+    "cmd": [ "/bin/ash" ], 
+    "stdin": [ 
+      "python /code/validate.py $images /pfs/out/valid /pfs/out/invalid"
+    ]
+  },
+  "parallelism_spec": {
+    "constant": "1"
+  },
+  "input": {
+    "atom": {
+      "repo": "images",
+      "glob": "/*"
+    }
+  }
+}

@@ -26,7 +26,11 @@ else:
 
 # move the image to the appropriate directory
 if valid:
+    if not os.path.exists(args.outDirValid):
+        os.makedirs(args.outDirValid)
     os.symlink(args.inFile, os.path.join(args.outDirValid, filename))
 else:
+    if not os.path.exists(args.outDirInvalid):
+        os.makedirs(args.outDirInvalid)
     os.symlink(args.inFile, os.path.join(args.outDirInvalid, filename))
 
