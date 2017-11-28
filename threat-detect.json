@@ -1,0 +1,32 @@
+{
+  "pipeline": {
+    "name": "threat-detect"
+  },
+  "transform": {
+    "image": "dwhitena/mgmt-threat-detect",
+    "cmd": [ "/bin/ash" ],
+    "stdin": [
+      "python /code/threatdetect.py $object /pfs/rules /pfs/out"
+    ]
+  },
+  "parallelism_spec": {
+    "constant": "1"
+  },
+  "input": {
+    "cross": [
+      {
+        "atom": {
+          "name": "object",
+          "repo": "object-detect",
+          "glob": "/*/*"
+        }
+      },
+      {
+        "atom": {
+          "repo": "rules",
+	  "glob": "/"
+	}
+      }
+    ]
+  }
+}
